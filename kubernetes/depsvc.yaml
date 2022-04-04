@@ -31,7 +31,7 @@ spec:
     spec:
       containers:
       - name: hello-python
-        image: mycontregistry1cnit.azurecr.io/aks-python:11
+        image: mycontregistry1cnit.azurecr.io/$(Build.Repository.Name):$(Build.BuildId)
         imagePullPolicy: Always
         ports:
         - containerPort: 5000
