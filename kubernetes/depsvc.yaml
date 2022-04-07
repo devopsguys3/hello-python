@@ -7,7 +7,7 @@ spec:
     app: hello-python
   ports:
   - protocol: "TCP"
-    port: 6000
+    port: 80
     targetPort: 5000
   type: LoadBalancer
 
@@ -31,7 +31,7 @@ spec:
     spec:
       containers:
       - name: hello-python
-        image: mycontregistry1cnit.azurecr.io/$(Build.Repository.Name):$(Build.BuildId)
+        image: mycontregistry1cnit.azurecr.io/$(Build.Repository.Name)
         imagePullPolicy: Always
         ports:
         - containerPort: 5000
